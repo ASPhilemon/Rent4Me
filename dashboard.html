@@ -1,0 +1,1592 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <!--MODALS-->
+    <!-- Withdraw Model -->
+    <div class="modal fade " id="modal-withdraw" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm Withdraw</h1>
+            </div>
+            <div class="modal-body px-3">
+            <p class="lead modal-lead mb-3">Confirm withdraw details</p>
+            <div class="d-flex  mb-3">
+                <h6 class="col-7">Mode</h6>
+                <p class="confirm-mode">Mobile Money</p>
+            </div>
+            <div class="d-flex  mb-3">
+                <h6 class="col-7">Carrier</h6>
+                <p class="confirm-carrier">MTN</p>
+            </div>
+            <div class="d-flex mb-3">
+                <h6 class="col-7 phone-account">Phone Number</h6>
+                <p class="confirm-account-number">0780425233</p>
+            </div>
+            <div class="d-flex  mb-3">
+                <h6 class="col-7">Withdraw Amount</h6>
+                <p class="confirm-amount"> UGX 60, 000</p>
+            </div>
+            <div class="withdraw-status text-center text-info">In progress/success/failure of Withdraw fetch request goes here</div>
+            <div class="d-flex mt-4 mb-2 col-5 col-md-5 mx-auto">
+                <button class="btn btn-primary px-3 w-100">Confirm</button>
+            </div>
+            
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary px-3 btn-modal-close" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--Opportunity Invest Modal-->
+    <div class="modal fade " id="modal-opportunity-invest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5 d-flex align-items-center">
+                <i class="bi bi-lightbulb me-4"></i>
+                <img class="img-modal" src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="" >
+                <p class="ms-3">Atim Dinah</p>
+            </h1>
+            </div>
+            <div class="modal-body px-3">
+                <p class="lead modal-lead mb-3">Confirm investment in selected opportunity</p>
+                <div class="d-flex  mb-3 confimm-personal-capital-wrapper">
+                    <h6 class="col-7">Personal Capital</h6>
+                    <p class="confirm-personal-capital">UGX 56, 000</p>
+                </div>
+           
+                <div class="d-flex mb-3 confimm-lent-capital-wrapper">
+                    <h6 class="col-7">Lent Capital</h6>
+                    <p class="confirm-lent-capital">UGX 45, 000</p>
+                </div>
+                <div class="d-flex mb-3 confimm-borrowed-capital-wrapper">
+                    <h6 class="col-7">Borrowed Capital</h6>
+                    <p class="confirm-lent-capital">UGX 95, 000</p>
+                </div>
+                <div class="invest-status text-center text-info">In progress/success/failure of Invest fetch request goes here</div>
+                <div class="d-flex mt-4 mb-2 col-5 col-md-5 mx-auto">
+                    <button class="btn btn-primary px-3 w-100">Confirm</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary px-3 btn-modal-close" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+     <!--Opportunity Uninvest Modal-->
+    <div class="modal fade " id="modal-opportunity-uninvest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5 d-flex align-items-center">
+                <i class="bi bi-lightbulb me-4"></i>
+                <img class="img-modal" src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="" >
+                <p class="ms-3">Atim Dinah</p>
+            </h1>
+            </div>
+            <div class="modal-body px-3">
+                <p class="lead modal-lead mb-3 text-warning">Un-invest from selected opportunity</p>
+                <div class="d-flex  mb-3 confimm-personal-capital-wrapper">
+                    <h6 class="col-7">Personal Capital</h6>
+                    <p class="confirm-personal-capital">UGX 56, 000</p>
+                </div>
+           
+                <div class="d-flex mb-3 confimm-lent-capital-wrapper">
+                    <h6 class="col-7">Lent Capital</h6>
+                    <p class="confirm-lent-capital">UGX 45, 000</p>
+                </div>
+                <div class="d-flex mb-3 confimm-borrowed-capital-wrapper">
+                    <h6 class="col-7">Borrowed Capital</h6>
+                    <p class="confirm-lent-capital">UGX 95, 000</p>
+                </div>
+                <div class="invest-status text-center text-info">In progress/success/failure of uninvest fetch request goes here</div>
+                <div class="d-flex mt-4 mb-2 col-5 col-md-5 mx-auto">
+                    <button class="btn btn-primary px-3 w-100">Confirm</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary px-3 btn-modal-close" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="d-flex container-fluid page-body px-0 mx-0">
+        <!-- Side Bar Offcanvas NavBar -->
+       <div class="sidebar  navbar navbar-expand-md col-md-3  justify-content-start align-items-start shadow py-0 tabs-dash-wrapper">
+            <div class="offcanvas offcanvas-start " tabindex="-1" id="navOffcanvas">
+                <div class="offcanvas-body d-flex flex-column py-0">
+                    <!-- offcanvas body header -->
+                    <div class="offcanvas-body-header border-bottom d-flex justify-content-start align-items-center ps-2 ps-md-3">
+                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                        <h5 class="ms-2 offcanvas-title">Ariko Stephen</h5>
+                    </div>
+                    <!-- offcanvas body content -->
+                    <ul class="navbar-nav offcanvas-body-content  d-flex flex-column tab-links">
+                        <li class="mb-5 ps-2 ps-md-3 active" data-bs-dismiss="offcanvas" data-tab-link-position="1" onclick="tabsDash(this)" id="account-toggler">
+                            <a href="#" >
+                                <div class="d-flex px-0 align-items-center">
+                                    <div class="dash-icons align-items-center dash-icons-account">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                    <span>Account Info</span> 
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mb-5 ps-2 ps-md-3" data-bs-dismiss="offcanvas" data-tab-link-position="2" onclick="tabsDash(this)" id="opp-toggler">
+                            <a href="#" >
+                                <div class="d-flex px-0 align-items-center">
+                                    <div class="dash-icons align-items-center dash-icons-opp">
+                                        <i class="bi bi-lightbulb"></i>
+                                    </div>
+                                    <div class="position-relative">
+                                        Opportunities
+                                        <span class="position-absolute top-2 start-100 translate-middle opp-badge badge rounded-pill bg-danger">
+                                            2
+                                    </div> 
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mb-5 ps-2 ps-md-3" data-bs-dismiss="offcanvas" data-tab-link-position="3" onclick="tabsDash(this)" id="inv-toggler">
+                            <a href="#" >
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center dash-icons dash-inv-icons me-2">
+                                        <i class="bi bi-arrow-down"></i>
+                                        <div class="d-flex flex-column">
+                                            <i class="bi bi-coin"></i>
+                                            <i class="bi bi-coin"></i>
+                                            <i class="bi bi-coin"></i>
+                                        </div>
+                                        <i class="bi bi-arrow-up"></i>
+                                    </div>
+                                    <span>Investments</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="col-6 col-md-6 d-flex justify-content-center ms-5 mt-4">
+                        <a href="auth/logout" class="a-logout btn btn-primary">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div class="main-content col-12 col-md-9">
+            <div class="logo-dash-wrapper">
+                <!-- Logo Header -->
+                <div class="header-logo d-flex align-items-center pe-3  py-0  bg-1">
+                    <button class="d-md-none btn sidebar-toggler d-flex align-items-center me-3 me-md-0" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas">
+                        <i class="bi bi-list"></i>
+                        <!--Notification -->
+                        <i class="bi bi-bell-fill text-danger"></i>
+                    </button>
+                    <button class="btn btn-search ms-md-5" onclick="toggleFullScreen({show:true}, '.search-page', '.logo-dash-wrapper')">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <h5 class="ms-auto pe-2">Rent4Me</h5>
+                </div>
+                <!-- Dashboards -->
+                <div class="dashboards tabs-dash-wrapper">
+                    <!-- Dashboard Account-->
+                    <div class="tab dash-tab account-dash-tab" data-tab-position="1" >
+                        <!-- Normal View -->
+                        <div class="dash-normal dash-normal-account">
+                            <!-- Dasboard Lead -->
+                            <div class="dashboard-lead px-0 bg-1">
+                                <div class="dp-large-wrapper border-bottom d-flex justify-content-center">
+                                    <img class="dp-large" src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="" >
+                                </div>
+                            </div>
+                            <!--Account Tabs-->
+                            <div class="tabs-account-wrapper mx-2 py-0 mt-md-3">
+                                <!--Tab links-->
+                                <div class="tab-links d-flex mx-auto justify-content-around col-sm-10 col-lg-8  mx-auto px-2">
+                                    <h5 class="col text-center tab-link active" data-tab-link-position='1' onclick="tabsAccount(this)" id="account-summary-toggler">Summary</h5>
+                                    <h5 class="col text-center tab-link" data-tab-link-position='2' onclick="tabsAccount(this)" id="account-deposits-toggler">Deposits</h5>
+                                    <h5 class="col text-center tab-link" data-tab-link-position='3' onclick="tabsAccount(this)" id="account-withdrawals-toggler">Withdrawals</h5>
+                                </div>
+                                <!--Tab Underline-->
+                                <div class="tab-link-underline-wrapper col-sm-10 col-lg-8 mx-auto px-2 mb-3">
+                                    <div class="col-4 tab-link-underline" ></div>
+                                </div>
+                                <!--Summary Tab-->
+                                <div class="tab summary-tab col-sm-10  col-lg-8 mx-auto px-2" data-tab-position='1' data-tab-wrapper="tabs-account-wrapper" id="account-summary">
+                                    <!--Worth-->
+                                    <div class="card card-worth d-flex flex-column justify-content-center align-items-center" id="account-summary-worth">
+                                        <span class="card-text text-center card-content mb-1 ">UGX 400,000</span>
+                                        <p class="caption text-center mt-3 ">Total Worth</p>
+                                    </div>
+                                    <!--Invested & Cash-->
+                                    <div class="row row-cols-2 gx-2 cards-invested justify-content-around align-items-center">
+                                        <div class="card align-items-center justify-content-center   py-2" id="account-summary-invested">
+                                            <span class="card-text text-center card-content mb-2">UGX 300,000</span>
+                                            <p class="caption text-center">Invested</p>
+                                        </div>
+                                        <div class="card    align-items-center justify-content-center  py-2" id="account-summary-account-balance">
+                                            <span class="card-text text-center card-content mb-2">UGX 300,000</span>
+                                            <p class="caption text-center">Account Balance</p>
+                                        </div>
+                                    </div>
+                                    <!--Withdraw-->
+                                    <div class="d-flex mb-3 mt-5 col-sm-10 col-lg-10 mx-auto" >
+                                        <button class="btn btn-primary py-2 col-12" onclick="toggleFullScreen({show:true}, '.withdraw-form', '.dash-normal-account', 'account')" id="account-summary-withdraw" >Withdraw</button>
+                                    </div>
+                                </div>
+                                <!--Deposits Tab-->
+                                <div class="tab deposits-tab col-sm-10 col-lg-8 mx-auto px-2 visually-hidden" data-tab-position='2' data-tab-wrapper="tabs-account-wrapper" id="account-deposits">
+                                    <caption>A list of all your deposits</caption>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table">
+                                            
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Mode</th>
+                                                <th scope="col">Carrier</th>
+                                                <th scope="col">Phone/Account</th>
+                                                <th scope="col">Trans ID</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <!--JS HTML-->
+                                                <tr>
+                                                    <th>2/3/2022</td>
+                                                    <td>500000</td>
+                                                    <td>Bank</td>
+                                                    <td>Stanbic</td>
+                                                    <td>6004476534</td>
+                                                    <td>455679</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2/3/2022</td>
+                                                    <td>500000</td>
+                                                    <td>Bank</td>
+                                                    <td>Stanbic</td>
+                                                    <td>6004476534</td>
+                                                    <td>455679</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                
+                                </div>
+                                <!--Withdraws Tab-->
+                                <div class="tab withdraws-tab col-sm-10 col-lg-8 mx-auto px-2 visually-hidden" data-tab-position='3' data-tab-wrapper="tabs-account-wrapper" id="account-withdrawals">
+                                    <caption>A list of all your withdrawals</caption>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Mode</th>
+                                                <th scope="col">Carrier</th>
+                                                <th scope="col">Phone/Account</th>
+                                                <th scope="col">Trans ID</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <!--JS HTML-->
+                                                <tr>
+                                                    <th>2/3/2022</th>
+                                                    <td>500000</td>
+                                                    <td>Bank</td>
+                                                    <td>Stanbic</td>
+                                                    <td>6004476534</td>
+                                                    <td>455679</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2/3/2022</th>
+                                                    <td>500000</td>
+                                                    <td>Bank</td>
+                                                    <td>Stanbic</td>
+                                                    <td>6004476534</td>
+                                                    <td>455679</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Full Screen view -->
+                        <div class="dash-full-screen dash-full-screen-account">
+                            <!--Withdraw Form-->
+                            <div class="withdraw-form full-screen-element visually-hidden" id="withdraw-form">
+                                <div  class="withdrawal-form-header d-flex full-screen-header py-2">
+                                    <div class="d-flex align-items-center col-md-sm-8 col-md-6  mx-sm-auto">
+                                        <button class="btn-back" onclick="toggleFullScreen({show:false}, '.withdraw-form', '.dash-normal-account', 'account')"><i class="bi bi-arrow-left px-2"></i></button>
+                                        <h5>Withdraw Request</h5>
+                                    </div>
+                                </div>
+                                <div class="withdrawal-form-body col-sm-10 col-md-6 mx-auto px-4">
+                                    <p class="lead mb-3 mt-4">Fill in the withdraw request form</p>
+                                    <h6 class="mb-2">Maximum Amount &mdash;
+                                    <span id="maxWithdrawAmount ms-3">UGX 800, 000</span>
+                                    </h6>
+                                    <h6 class="heading-3 mb-4">Minimum Amount &mdash;
+                                        <span id="minWithdrawAmount ms-3">UGX 10, 000</span>
+                                    </h6>
+                                    <form id="withdrawForm mt-4">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <label for="withdrawal-mode" class="form-label">Mode</label>
+                                            <select name="withdrawalMode" id="withdrawal-mode" class="form-select" onchange="changeWithdrawForm(this)">
+                                                <option value="MM">Mobile Money</option>
+                                                <option value="BT">Bank Transfer</option>
+                                            </select>
+                                        </div>
+                                        <div class="carrier d-flex align-items-center mb-4">
+                                            <label for="carrier-withdraw" class="form-label">Carrier</label>
+                                            <select name="carrier" id="carrier-withdraw" class="form-select carrier-menu-withdraw">
+                                                <option value="1">Airtel</option>
+                                                <option value="2">MTN</option>
+                                                <!--JS Modified HTML-->
+                                            </select>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-4">
+                                            <label for="account-number-withdraw" class="form-label label-account-number-withdraw"> Phone Number</label><!--JS Modified HTML--> </label>
+                                            <div class="flex-grow-1 ">
+                                                <input type="number" class="form-control" id="account-number-withdraw" name="accountNumber" required min="0" >
+                                                <div class="withdraw-phone-account-error text-danger mt-2">Phone/account errors go here</div>
+                                            </div>
+                                           
+                                        </div>
+                                       
+                                        <div class="d-flex align-items-center mb-0">
+                                            
+                                            <label for="withdrawal-amount" class="form-label">Amount</label>
+                                            <div class="flex-grow-1">
+                                                <input type="number" class="form-control" id="withdrawal-amount" name="withdrawalAmount" required max="70000" min="10000">
+                                                <div class="withdraw-amount-error text-danger mt-2">Amount errors go here</div>
+                                            </div>
+                                        </div>
+                                        <button type = 'button' class="btn btn-primary btn-submit w-100" data-bs-toggle="modal" data-bs-target="#modal-withdraw" >Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Dashboard Opportunities-->
+                    <div class="tab dash-tab opp-dash-tab dashboard-opportunities visually-hidden mt-2" data-tab-position="2">
+                        <!--Normal View-->
+                        <div class="dash-normal dash-normal-opp">
+                             <!--Dashboard-lead-->
+                            <div class="dashboard-lead d-flex justify-content-around mb-2 px-1 px-md-2">
+                                <!--Lending-->
+                                <div class="card card-opp justify-content-center align-items-center" id="opp-investing-lending">
+                                    <span class="mb-2"> UGX 250000</span>
+                                    <p class="caption text-center">For Investing & Lending</p>
+                                </div>
+                                <!--Collateral-->
+                                <div class="card card-opp justify-content-center align-items-center" id="opp-collateral">
+                                    <span class="mb-2">UGX 250000</span>
+                                    <p class="caption">Collateral</p>
+                                </div>
+                            </div>
+                            <!--Opportunities Tabs-->
+                            <div class="tabs-opp-wrapper mx-2 py-0">
+                                <!--Tab links-->
+                                <div class="tab-links d-flex mx-auto justify-content-around col-sm-10 col-lg-8  mx-auto px-2">
+                                    <h5 class="col text-center tab-link active" data-tab-link-position='1' onclick="tabsOpp(this)" id="opp-opp-toggler">Opportunities</h5>
+                                    <h5 class="col text-center tab-link" data-tab-link-position='2' onclick="tabsOpp(this)" id="opp-pending-toggler">Pending</h5>
+                                </div>
+                                <!--Tab Underline-->
+                                <div class="tab-link-underline-wrapper col-sm-10 col-lg-8 mx-auto px-2 mb-3">
+                                    <div class="col-6 tab-link-underline" ></div>
+                                </div>
+                                <!--Opoortunities Tab-->
+                                <div class="tab opp-tab col-sm-10  col-lg-8 mx-auto px-2" data-tab-position='1' data-tab-wrapper="tabs-opp-wrapper" id="opp-opp">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.opp-form', '.dash-normal-opp', 'opp')" data-opp-id="1" data-date = 'March 16, 2023 18:47:00'>
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                        <p class="ms-3 opp-name">
+                                            Ariko
+                                        </p>
+                                        <p class=" ms-sm-auto me-sm-3 me-1  opp-amount">UGX 400000</p>
+                                        <i class="bi bi-clock me-1"></i>
+                                        <span class="part-time" data-opp-id="1" data-date = 'March 16, 2023 18:47:00'>60D</span>
+                                    </li>
+                                    <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.opp-form', '.dash-normal-opp', 'opp')" data-opp-id="2" data-list-date = 'March 29, 2023 00:00:09'>
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                        <p class="ms-3 opp-name">
+                                            Omodo
+                                        </p>
+                                        <p class="ms-sm-auto me-sm-3 me-1 opp-amount">UGX 400000</p>
+                                        <i class="bi bi-clock me-1"></i>
+                                        <span class="part-time" data-opp-id="2" data-date = 'March 20, 2023 00:00:09'>60D</span>
+                                        <div class="d-flex position-relative">
+                                            <span class="badge top-0  start-100 translate-middle rounded-pill bg-danger new-badge position-absolute">
+                                                New
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.opp-form', '.dash-normal-opp', 'opp')" data-opp-id="3" data-list-date = 'Nov 16, 2023 18:04:00'>
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                        <p class="ms-3 opp-name">
+                                            Rogers
+                                        </p>
+                                        <p class=" ms-sm-auto me-sm-3 me-1 opp-amount">UGX 400000</p>
+                                        <i class="bi bi-clock me-1"></i>
+                                        <span class="part-time" data-opp-id="3" data-date = 'Nov Feb, 2023 18:04:00'>60D</span>
+                                        <div class="d-flex position-relative">
+                                            <span class="badge top-0  start-100 translate-middle rounded-pill bg-danger new-badge position-absolute">
+                                                New
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                </div>
+                                <!--Pending Opoortunities Tab-->
+                                <div class="tab pending-opp-tab col-sm-10  col-lg-8 mx-auto px-2 visually-hidden" data-tab-position='2' data-tab-wrapper="tabs-opp-wrapper" id="opp-pending">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item" data-opp-id="20" >
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                                <p class="ms-3">Maria Atim</p>
+                                                <p class="ms-auto">UGX 1,200,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6>Your Investment</h6>
+                                                <h6>UGX 200,000</h6>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Personal Capital</p>
+                                                <p>UGX 50,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Borrowed</p>
+                                                <p>UGX 150,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Time left</p>
+                                                <p class="part-time" data-date='May 10, 2023 19:44:00' data-opp-id="20">UGX 150,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2 mt-3">
+                                                <button class="btn btn-primary btn-sm px-2" onclick="toggleFullScreen({show:true}, '.opp-form', '.dash-normal-opp', 'opp')" data-opp-id="4">
+                                                    <i class="bi bi-pencil me-2"></i> Edit Amount
+                                                </button>
+                                                <button class="btn btn-primary btn-sm px-2" data-opp-id-delete="4" data-bs-toggle="modal" data-bs-target="#modal-opportunity-uninvest"> <i class="bi bi-trash3 me-2"></i> Remove</button>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item" data-opp-id = '21'>
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                                <p class="ms-3">Omodo Joshua</p>
+                                                <p class="ms-auto">UGX 1,200,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6>Your Investment</h6>
+                                                <h6>UGX 150,000</h6>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Lent</p>
+                                                <p>UGX 150,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Time left</p>
+                                                <p class="part-time" data-date='March 2, 2023 18:25:00' data-opp-id="21">UGX 150,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2 mt-3">
+                                                <button class="btn btn-primary  btn-sm px-2" onclick="toggleFullScreen({show:true}, '.opp-form', '.dash-normal-opp', 'opp')" data-opp-id="5"> <i class="bi bi-pencil me-2"></i> Edit Amount</button>
+                                                <button class="btn btn-primary  btn-sm px-2" data-opp-id-delete="5" data-bs-toggle="modal" data-bs-target="#modal-opportunity-uninvest"> <i class="bi bi-trash3 me-2"></i> Remove</button>
+                                            </div>
+                                           
+                                        </li>
+                                        <li class="list-group-item" data-opp-id = '22'>
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                                <p class="ms-3">Maria Atim</p>
+                                                <p class="ms-auto">UGX 1,200,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6>Your Investment</h6>
+                                                <h6>UGX 200,000</h6>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Personal Capital</p>
+                                                <p>UGX 50,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Borrowed</p>
+                                                <p>UGX 150,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p>Time left</p>
+                                                <p class="part-time" data-date='Nov 9, 2023 18:30:00' data-opp-id="22">UGX 150,000</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2 mt-3">
+                                                <button class="btn btn-primary btn-sm px-2" onclick="toggleFullScreen({show:true}, '.opp-form', '.dash-normal-opp', 'opp')" data-opp-id="6">
+                                                    <i class="bi bi-pencil me-2"></i> Edit Amount
+                                                </button>
+                                                <button class="btn btn-primary btn-sm px-2" data-opp-id-delete="6" data-bs-toggle="modal" data-bs-target="#modal-opportunity-uninvest"> <i class="bi bi-trash3 me-2"></i> Remove</button>
+                                            </div>
+                                          
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Full Screen view -->
+                        <div class="dash-full-screen dash-full-screen-opp">
+                            <!-- Opportunity Form -->
+                            <div class="opp-form full-screen-element visually-hidden" id="opp-form">
+                                <div  class="opp-form-header d-flex  full-screen-header py-2">
+                                    <div class="d-flex align-items-center col-md-sm-8 col-md-6  mx-sm-auto">
+                                        <button class="btn-back" onclick="toggleFullScreen({show:false}, '.opp-form', '.dash-normal-opp', 'opp')"><i class="bi bi-arrow-left  px-1"></i></button>
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="" class="me-2">
+                                        <h5 class="me-4">Atim Dinah</h5>
+                                        <h5 class="ms-auto pe-2">UGX 700, 000</h5>
+                                    </div>
+                                </div>
+                                <div class="opp-form-body col-sm-10 col-md-8 col-lg-6 mx-auto px-4">
+                                    <div class="d-flex mt-3 mb-2">
+                                        <h6 class="opp-summary-key">Duration of Investment</h6>
+                                        <h6>5 Months</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <h6 class="opp-summary-key">Expected Monthly Return</h6>
+                                        <h6>1.85%</h6>
+                                    </div>
+                                    <p class="lead mt-3">Invest in one or more categories</p>
+                                    <form id="opp-form">
+                                        <input type="number" name="oppId" class="opp-id-input d-none">
+                                        <fieldset class="mb-4">
+                                            <legend>Personal Capital</legend>
+                                            <div class="mb-1 my-0">
+                                                <label for="amount-individual" class="form-label">Amount</label>
+                                                <input type="number" id="amount-individual" class="form-control" name="individual">
+                                            </div>
+                                            <div class="personal-capital-error text-danger mt-2">Personal capital errors go here</div>
+                                        </fieldset>
+                                        <fieldset class="mb-3">
+                                            <legend>Borrow or Lend (But not Both)</legend>
+                                            <div class="mb-1">
+                                                <label for="amount-guarantor-protection" class="form-label">Amount for Lending</label>
+                                                <input type="number" id="amount-guarantor-protection" class="form-control" name="guarantorProtection">
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="amount-guarantor" class="form-label">Amount for Borrowing</label>
+                                                <input type="number" id="amount-guarantor" class="form-control" name="guarantor">
+                                            </div>
+                                            <div class="lend-borrow-amount-error text-danger mt-2">Lend & Borrow amount errors go here</div>
+                                        </fieldset>
+                                        <p class="mb-0"><span class="time-left-caption">Time Left:</span>  <span class="form-time-left">6D : 5H : 7M : 3S</span></p>
+                                        <button type = 'button' class="btn btn-primary btn-invest btn-submit w-100" data-bs-toggle="modal" data-bs-target="#modal-opportunity-invest"> Invest</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Dashboard Investments-->
+                    <div class="tab dash-tab inv-dash-tab dashboard-investments px-0 visually-hidden mt-2" data-tab-position="3">
+                        <!--Normal view-->
+                        <div class="dash-normal dash-normal-inv px-2">
+                            <!--Dashboard-lead-->
+                            <div class="dashboard-lead mb-2 ">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <!--Borrowed-->
+                                    <div class="card card-inv justify-content-center align-items-center" id="inv-borrowed-capital">
+                                        <span class="mb-2"> UGX 150000</span>
+                                        <p class="caption text-center">Borrowed Capital</p>
+                                    </div>
+                                    <!--Lent Out-->
+                                    <div class="card card-inv justify-content-center align-items-center" id="inv-lent-out">
+                                        <span class="mb-2">UGX 200000</span>
+                                        <p class="caption">Lent Out</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <!--Personal Investment-->
+                                    <div class="card card-inv justify-content-center align-items-center" id="inv-personal-capital">
+                                        <span class="mb-2"> UGX 250000</span>
+                                        <p class="caption text-center">Personal Capital</p>
+                                    </div>
+                                    <!--Debt from Defaults-->
+                                    <div class="card card-inv justify-content-center align-items-center" id="inv-loan-to-pay">
+                                        <span class="mb-2">UGX 0</span>
+                                        <p class="caption">Loan to Pay</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Investments Tabs-->
+                            <div class="tabs-inv-wrapper mx-2 py-0">
+                                <!--Tab links-->
+                                <div class="tab-links d-flex mx-auto justify-content-around col-sm-10 col-lg-8  mx-auto px-2">
+                                    <h5 class="col text-center tab-link active" data-tab-link-position='1' onclick="tabsInv(this)" id="inv-current-toggler">Current</h5>
+                                    <h5 class="col text-center tab-link" data-tab-link-position='2' onclick="tabsInv(this)" id="inv-past-toggler">Past</h5>
+                                </div>
+                                <!--Tab Underline-->
+                                <div class="tab-link-underline-wrapper col-sm-10 col-lg-8 mx-auto px-2 mb-3">
+                                    <div class="col-6 tab-link-underline" ></div>
+                                </div>
+                                <!--Current Investments Tab-->
+                                <div class="tab current-inv-tab col-sm-10  col-lg-8 mx-auto px-2" data-tab-position='1' data-tab-wrapper="tabs-inv-wrapper" id="inv-current">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.inv-summary-current', '.dash-normal-inv', 'inv')" data-inv-id="1">
+                                            <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                            <p class="ms-3">Ariko Stephen</p>
+                                            <p class="ms-auto">UGX 400000</p>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.inv-summary-current', '.dash-normal-inv', 'inv')" data-inv-id="2">
+                                            <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                            <p class="ms-3 ">Omodo Joshua</p>
+                                            <p class="ms-auto">UGX 500000</p>
+                                        </li>
+                                        <li class="list-group-item list-group-item-action d-flex align-items-center " onclick="toggleFullScreen({show:true}, '.inv-summary-current', '.dash-normal-inv', 'inv')" data-inv-id="3">
+                                            <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                            <p class="ms-3 ">Kawuma Andrew</p>
+                                            <p class="ms-auto">UGX 900000</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Past Investments Tab-->
+                                <div class="tab past-inv-tab col-sm-10  col-lg-8 mx-auto px-2 visually-hidden" data-tab-position='2' data-tab-wrapper="tabs-inv-wrapper" id="inv-past">
+                                    <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.inv-summary-past', '.dash-normal-inv', 'inv')" data-inv-id="4">
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                        <p class="ms-3">Rogers</p>
+                                        <p class="ms-auto">UGX 670000</p>
+                                    </li>
+                                    <li class="list-group-item list-group-item-action d-flex align-items-center" onclick="toggleFullScreen({show:true}, '.inv-summary-past', '.dash-normal-inv', 'inv')" data-inv-id="5">
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="">
+                                        <p class="ms-3 ">Flavia</p>
+                                        <p class="ms-auto">UGX 190000</p>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Full Screen View-->
+                        <div class="dash-full-screen dash-full-screen-inv">
+                            <!--Investment Summary Current-->
+                            <div class="inv-summary-current full-screen-element  visually-hidden" id="inv-summary-current">
+                                <div  class="inv-summary-current-header d-flex full-screen-header py-2">
+                                    <div class="d-flex align-items-center col-md-sm-8 col-md-6  mx-sm-auto">
+                                        <button class="btn-back" onclick="toggleFullScreen({show:false}, '.inv-summary-current', '.dash-normal-inv', 'inv')"><i class="bi bi-arrow-left  px-1"></i></button>
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="" class="me-2">
+                                        <h5 class="me-4">Atim Dinah</h5>
+                                        <h5 class="ms-auto pe-2">UGX 700, 000</h5>
+                                    </div>
+                                </div>
+                                <div class="inv-summary-current-body col-sm-10 col-md-6 mx-auto px-4">
+                                    <div class='d-flex mb-2 inv-summary-row mt-3 mb-3'>
+                                        <h6 class='inv-summary-item-key'>Amount Invested</h6>
+                                        <h6 class='inv-summary-item-value'>UGX 700, 000</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Date Invested</h6>
+                                        <h6 class='inv-summary-item-value'>Jan 13 2022</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Monthly Profit</h6>
+                                        <h6 class='inv-summary-item-value'>UGX 25, 000</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Payments Made</h6>
+                                        <h6 class='inv-summary-item-value'>5</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Payments Missed</h6>
+                                        <h6 class='inv-summary-item-value'>&mdash;</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>End Date</h6>
+                                        <h6 class='inv-summary-item-value'>June 13 2021</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Profit Made</h6>
+                                        <h6 class='inv-summary-item-value'>UGX 12, 000</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Investment Summary Past-->
+                            <div class="inv-summary-past full-screen-element visually-hidden" id="inv-summary-past">
+                                <div  class="inv-summary-past-header d-flex full-screen-header py-2">
+                                    <div class="d-flex align-items-center col-md-sm-8 col-md-6  mx-sm-auto">
+                                        <button class="btn-back" onclick="toggleFullScreen({show:false}, '.inv-summary-past', '.dash-normal-inv', 'inv')"><i class="bi bi-arrow-left  px-1"></i></button>
+                                        <img src="https://learn.shayhowe.com/practice/adding-media/assets/images/speakers/arman-ghosh.jpg" alt="" class="me-2">
+                                        <h5 class="me-4">Atim Dinah</h5>
+                                        <h5 class="ms-auto pe-2">UGX 700, 000</h5>
+                                    </div>
+                                </div>
+                                <div class="inv-summary-current-past col-sm-10 col-md-6 mx-auto px-4">
+                                    <div class='d-flex mb-2 inv-summary-row mt-3 mb-3'>
+                                        <h6 class='inv-summary-item-key'>Amount Invested</h6>
+                                        <h6 class='inv-summary-item-value'>UGX 700, 000</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Date Invested</h6>
+                                        <h6 class='inv-summary-item-value'>Jan 13 2022</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Monthly Profit</h6>
+                                        <h6 class='inv-summary-item-value'>UGX 25, 000</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Duration of Investment</h6>
+                                        <h6 class='inv-summary-item-value'>5 Months</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Total Profit/Loss</h6>
+                                        <h6 class='inv-summary-item-value'>&mdash;</h6>
+                                    </div>
+                                    <div class='d-flex mb-2 inv-summary-row mb-3'>
+                                        <h6 class='inv-summary-item-key'>Return on Investment</h6>
+                                        <h6 class='inv-summary-item-value'>20%</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Search Page-->
+            <div class="search-page full-screen-element visually-hidden">
+                <!-- Search Page Header -->
+                <div class="d-flex align-items-center border-bottom">
+                    <button class="btn-back btn-back-search" onclick="toggleFullScreen({show:false}, '.search-page', '.logo-dash-wrapper')"><i class="bi bi-arrow-left  px-1"></i></button>
+                    <div class="col-8 col-md-10">
+                        <input type="text" class="form-control search-input" placeholder="Search dashboard" oninput="SearchPage()">
+                    </div>
+                    <button class="btn btn-clear  text-center d-md-nonen ms-2" onclick="clearSearch()">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <!-- Search Page Results -->
+                <div class="search-page-results mx-4 mx-md-5 mt-3">
+                    <div class="search-no-results visually-hidden">
+                        <p class="text-muted">Nothing found in dashboard</p> 
+                        <h6 class="mt-4 mb-3">Try a more general search</h6>
+                        <ul>
+                            <li class="mb-3" onclick="SearchSuggestion('account')">
+                                <a href="#" class="d-flex">
+                                    <span class="search-category">Account</span> &mdash;
+                                    <span class="search-text">Account Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="mb-3" onclick="SearchSuggestion('opportunities')">
+                                <a href="#" class="d-flex">
+                                    <span class="search-category">Opportunities</span> &mdash;
+                                    <span class="search-text">Opportunities Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="mb-3" onclick="SearchSuggestion('investments')">
+                                <a href="#" class="d-flex">
+                                    <span class="search-category">Investments</span> &mdash;
+                                    <span class="search-text">Investments Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="mb-3" onclick="SearchSuggestion('dashboard')">
+                                <a href="#" class="d-flex">
+                                    <span class="search-category">Dashboard</span> &mdash;
+                                    <span class="search-text">All Dashboards</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Search Account-->
+                    <div class="search-account visually-hidden mb-4">
+                        <!--Search Dashboard Header-->
+                        <div class="search-dash-header d-flex align-items-center mb-3">
+                            <i class="bi bi-person me-3"></i>
+                            <h5 class="search-account-title">Account Dasboard</h5>
+                        </div>
+                        <!--Account Cards-->
+                        <div class="search-account-cards">
+                            
+                        </div>
+                        <!--Account Tabs-->
+                        <div class="search-account-tabs">
+                       
+                        </div>
+                        <hr class="hr-account mt-3">
+                    </div>
+                    <!--Search Opportunities-->
+                    <div class="search-opp mb-4 visually-hidden">
+                        <!-- Search Dashboard Header-->
+                        <div class="search-dash-header d-flex align-items-center mb-3">
+                            <i class="bi bi-lightbulb me-3"></i>
+                            <h5 class="search-account-title">Opportunties Dasboard</h5>
+                        </div>
+                        
+                        <!--Opportunities Cards-->
+                        <div class="search-opp-cards">
+                       
+                        </div>
+                        <!--Opportunity tabs-->
+                        <div class="search-opp-tabs">
+                       
+                        </div>
+                        <!--Opportunity List-->
+                        <ul class="search-opp-list">
+                          
+                        </ul>
+                        <hr class="hr-opp mt-3">
+                    </div>
+                    <!--Search Investments-->
+                    <div class="search-inv mb-4 visually-hidden">
+                        <!-- Search Dashboard Header-->
+                        <div class="search-dash-header d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center dash-icons dash-inv-icons me-2">
+                            <i class="bi bi-arrow-down"></i>
+                            <div class="d-flex flex-column">
+                                <i class="bi bi-coin"></i>
+                                <i class="bi bi-coin"></i>
+                                <i class="bi bi-coin"></i>
+                            </div>
+                            <i class="bi bi-arrow-up"></i>
+                        </div>
+                        <h5 class="search-account-title">Investments Dasboard</h5>
+                    </div>
+                        <!--Investments Cards-->
+                        <div class="search-inv-cards">
+                       
+                        </div>
+                        <!--Investment Tabs-->
+                        <div class="search-inv-tabs">
+                       
+                        </div>
+                        <!--Investment List-->
+                        <ul class="search-inv-list">
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SCRIPTS-->
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <!--Page Scripts-->
+
+    <script>
+        //Remember Dashboards Full Screen Status
+        let dashFullScreen = {
+            account: false,
+            opp: false,
+            inv: false,
+        }
+        //Get maximum scrollLeft values for deposits and withdraw tables
+        let tDeposits = document.querySelector('.deposits-tab .table-responsive')
+        tDeposits.scrollLeft = 100000;
+        let tDepositsMaxScroll = tDeposits.scrollLeft;
+        tDeposits.scrollLeft = 0;
+        let tWithdrawals = document.querySelector('.withdraws-tab .table-responsive')
+        tWithdrawals.scrollLeft = 100000;
+        let twithdrawalsMaxScroll = tWithdrawals.scrollLeft;
+        tWithdrawals.scrollLeft = 0;
+        console.log(tDepositsMaxScroll, twithdrawalsMaxScroll);
+
+        //Swipe position
+        let touchstartX;
+        let touchendX ;
+        let touchstartY;
+        let touchendY;
+        let activeTabPosition;
+        let newActiveTabPosition;
+        let activeLinkPosition;
+        let newActiveTabLinkPosition;
+        let tabs = document.querySelectorAll('.tab');
+        tabs.forEach((tab)=>{
+            
+            //Add event listener to tabs other than dashboard tabs
+            if (!(tab.classList.contains('dash-tab'))){
+                //touch start X
+                tab.addEventListener('touchstart', e => {
+                    touchstartX = e.changedTouches[0].screenX;
+                    
+                })
+                //touch start Y
+                tab.addEventListener('touchstart', e => {
+                    touchstartY = e.changedTouches[0].screenY;
+                })
+                //touch end X
+                tab.addEventListener('touchend', e => {
+                    touchendX = e.changedTouches[0].screenX;
+                })
+                tab.addEventListener('touchend', e => {
+                    touchendY = e.changedTouches[0].screenY;
+                    let direction = checkDirection();
+                    let tabsWrapperClass = tab.getAttribute('data-tab-wrapper');
+                    activeTabPosition = tab.getAttribute('data-tab-position');
+                    //If Left or Right Swipe But not False Direction
+                    if (direction){
+                        if(direction =='left') newActiveTabLinkPosition = Number(activeTabPosition) + 1; 
+                        if(direction =='right') newActiveTabLinkPosition = Number(activeTabPosition) - 1;
+                        //alert(newActiveTabLinkPosition);
+                        //Return if left swipe to left most tab
+                        if (newActiveTabLinkPosition < 1) return;
+                    }
+                    //Return if direction is false
+                    if(!direction) return;
+                    //if account tabs
+                    if(tabsWrapperClass =='tabs-account-wrapper'){
+                        //If deposits tab, check if table scroll is far left or far right
+                        if ((tab.classList.contains('deposits-tab'))){
+                            if(direction == 'left'){
+                                if ((tDeposits.scrollLeft < 150)) return;
+                            }
+                            if(direction == 'right'){
+                                if (tDeposits.scrollLeft > 50) return;
+                            }
+                        }
+                        //If withdrawals tab, check if table scroll is far left 
+                         if ((tab.classList.contains('withdraws-tab'))){
+                         
+                            if(direction == 'right'){
+                                if (tWithdrawals.scrollLeft > 0) return;
+                            }
+                        }
+                        //Return if right swipe to right most tab
+                        if (newActiveTabLinkPosition > 3) return;
+                        let newActiveTabLink = document.querySelector(`.${tabsWrapperClass} [data-tab-link-position="${newActiveTabLinkPosition}"]`);
+                        tabsAccount(newActiveTabLink);
+                    }
+                    //if opportunities tabs
+                    if(tabsWrapperClass =='tabs-opp-wrapper'){
+                        //Return if right swipe to right most tab
+                        if (newActiveTabLinkPosition > 2) return;
+                        let newActiveTabLink = document.querySelector(`.${tabsWrapperClass} [data-tab-link-position="${newActiveTabLinkPosition}"]`);
+                        tabsOpp(newActiveTabLink);
+                    }
+                    //if investment tabs
+                    if(tabsWrapperClass == 'tabs-inv-wrapper'){
+                        //Return if right swipe to right most tab
+                        if (newActiveTabLinkPosition > 2) return;
+                        let newActiveTabLink = document.querySelector(`.${tabsWrapperClass} [data-tab-link-position="${newActiveTabLinkPosition}"]`);
+                        tabsInv(newActiveTabLink);
+                    }
+                })
+            }
+        })
+        //Check Swipe Direction
+        function checkDirection() {
+            if ((touchendX - touchstartX > 30)&&(Math.abs(touchendY - touchstartY)<20)) return 'right';
+            if ((touchendX - touchstartX < -30)&&(Math.abs(touchendY - touchstartY)<20)) return 'left'
+            return false;
+        }
+        //Account tabs toggler
+        function tabsAccount(newActiveTabLink){
+            tabsToggler(newActiveTabLink, 'tabs-account-wrapper');
+        }
+        //Opportunity tabs toggler
+        function tabsOpp(newActiveTabLink){
+        tabsToggler(newActiveTabLink, 'tabs-opp-wrapper');
+        }
+        //Investments tabs toggler
+        function tabsInv(newActiveTabLink){
+        tabsToggler(newActiveTabLink, 'tabs-inv-wrapper');
+        }
+        //Dashboards tabs toggler
+        function tabsDash(newActiveTabLink){
+        tabsToggler(newActiveTabLink, 'tabs-dash-wrapper', true);
+        }
+        //Tabs Toggler
+        function tabsToggler(newActiveTabLink, tabsWrapperClass, noTranslate){
+            //Get active tab link, get its position and remove active class
+            let activeTabLink = document.querySelector(`.${tabsWrapperClass} .active`);
+            activeTabLink.classList.remove('active');
+            let oldPosition = activeTabLink.getAttribute('data-tab-link-position');
+            //Get position of clicked tab link and add active class
+            let newPosition = newActiveTabLink.getAttribute('data-tab-link-position');
+            newActiveTabLink.classList.add('active');
+            //Get active-tab-underline and apply a translation for translable tab links;
+            if(!noTranslate){
+                let tabLinkUnderline = document.querySelector(`.${tabsWrapperClass} .tab-link-underline`)
+                let translatePercent = (newPosition-1)*100;
+                tabLinkUnderline.style.transform = `translateX(${translatePercent +'%'})`;
+            }
+            //Toggle Active Tab
+            //Get active tab, change opacity and hide
+            let activeTab = document.querySelector(`.${tabsWrapperClass}>[data-tab-position = "${oldPosition}"]`);
+            activeTab.classList.add('visually-hidden');
+            activeTab.style.opacity = '0';
+            //Get new active tab, change opacity and unhide
+            let newActiveTab = document.querySelector(`.${tabsWrapperClass}>[data-tab-position = "${newPosition}"]`);
+            newActiveTab.classList.remove('visually-hidden');
+            newActiveTab.style.opacity = '1';
+
+            //Toggle Logo Header for dashboard toggles
+            let logoHeader = document.querySelector('.header-logo')
+            if (tabsWrapperClass == 'tabs-dash-wrapper'){
+                let dash;
+                if(newPosition == 1) dash = 'account';
+                if(newPosition == 2) dash = 'opp';
+                if(newPosition == 3) dash = 'inv'
+                if(dashFullScreen[dash]){
+                    //Hide Logo Header
+                    logoHeader.classList.add('visually-hidden')
+                } else{
+                    //Unhide Logo header
+                    logoHeader.classList.remove('visually-hidden')
+                }
+            }
+            //Get search page and hide
+            let searchPage = document.querySelector('.search-page');
+            searchPage.classList.add('visually-hidden')
+            //Reveal logo-dashboard-wrapper
+            let logoDashWrapper = document.querySelector('.logo-dash-wrapper');
+            logoDashWrapper.classList.remove('visually-hidden');
+        }
+        //Full Screen Toggler
+        function toggleFullScreen(status, toggleElementClass, normalPageElementClass, dash){
+            //Get Element to toggle fullscreen
+            let element = document.querySelector(toggleElementClass);
+            //Get Normal Page Element
+            let normalPageElement = document.querySelector(normalPageElementClass);
+            //Full Screen Element & Normal Page Element Toggle
+            //show full screen element
+            if (status.show){
+                //Get logo header and hide
+                let logoHeader = document.querySelector('.header-logo')
+                logoHeader.classList.add('visually-hidden')
+                //Hide Normal Page Element
+                normalPageElement.classList.add('visually-hidden');
+                //Unhide fullscreen element
+                element.classList.remove('visually-hidden');
+                //Remember Dashboard Full Screen Status for dashboards full screen toggles
+                if(dash) dashFullScreen[dash] = true;
+            }
+                //Hide full screen element
+                if (!(status.show)){
+                //Get logo header and unhide
+                let logoHeader = document.querySelector('.header-logo')
+                logoHeader.classList.remove('visually-hidden')
+                //Unhide Normal Page Element
+                normalPageElement.classList.remove('visually-hidden');
+                //Hide fullscreen element
+                element.classList.add('visually-hidden');
+                //Remember Dashboard Full Screen Status for dashboards full screen toggles
+                if(dash) dashFullScreen[dash] = false;
+            }
+        }
+        //Withdraw Form Interaction
+        function MMMenu(){
+            return `
+            <option value = '1'>Airtel</option>
+            <option value = '2'>MTN</option>
+            `;
+        }
+        function BankMenu(){
+            let banks = ['Absa','Centenary','DFCU', 'Equity', 'Stanbic', 'Standard Chartered'];
+            let html = '';
+            banks.forEach((bank)=>{
+                html += `<option value = '${bank}'>${bank}</option>`
+            })
+            return html;
+        }
+        function changeWithdrawForm(element){
+            let label = document.querySelector('.label-account-number-withdraw');
+            let carrierMenu = document.querySelector('.carrier-menu-withdraw')
+            if (element.value == 'MM') {
+                label.innerHTML = 'Phone Number'
+                carrierMenu.innerHTML = MMMenu()
+            } else{
+                {
+                label.innerHTML = 'Account Number'
+                carrierMenu.innerHTML = BankMenu();
+            }
+            }
+        }
+        //clear search
+        function clearSearch(){
+            
+            let searchInput = document.querySelector('.search-input');
+            let btnClear = document.querySelector('.btn-clear');
+            let searchPageResults = document.querySelector('.search-page-results');
+            searchPageResults.classList.add('visually-hidden');
+            searchInput.value = ''
+            searchInput.focus();
+            btnClear.classList.add('custom-active');
+            setTimeout(()=>{
+                btnClear.classList.remove('custom-active');
+            }, 90)
+
+        }
+        //Focus search input on open of search page
+        let btnSearch = document.querySelector('.btn-search');
+        btnSearch.addEventListener('click', ()=>{
+            let searchInput = document.querySelector('.search-input');
+            searchInput.focus();
+                            
+        })
+        
+        //Open Search Result
+        function openSearchResult(state){
+            let dashToggler = document.querySelector(state.dashTogglerId);
+            let tabToggler = document.querySelector(state.tabTogglerId);
+            let targetElement = document.querySelector(state.targetElementId);
+            let targetToggler = document.querySelector(state.targetTogglerId);
+            dashToggler.click();
+            //Highlight target element
+            targetElement.classList.add('target');
+            //remove white background from th elements
+            let thElements = document.querySelectorAll('th:first-child');
+            thElements.forEach((th)=>{
+                th.classList.add('target');
+            })
+            setTimeout(()=>{
+                targetElement.classList.remove('target');
+                thElements.forEach((th)=>{
+                th.classList.remove('target');
+            })
+            }, 700)
+            //If target element is a card not residing in a tab (opp & inv cards) return
+            if(!tabToggler) return;
+            tabToggler.click();
+            //If target Toggler & targetElement are Null (Full screen toggle with data attribute)
+            if(!targetToggler){
+                let dataAttribute = state.dataAttribute;
+                if(dataAttribute) targetToggler = document.querySelector(`[${dataAttribute.name} = "${dataAttribute.value}"]`);
+            }
+            //For Full Screen Toggling)
+            if (targetToggler){
+                targetToggler.click();
+            }
+        }
+        //Populate Search Page
+        function handleFilter(item, searchWords){
+            let returnItem;
+            let truthArray = [];
+            let keywords = item.keyWordList.split(" ");
+            //Remove  keywords with whitespace
+            keywords = keywords.filter((keyword)=>{
+                if (keyword) return true;
+                else return false;
+            })
+            for(i=0; i< searchWords.length;){
+                for(j=0; j < keywords.length;){
+                    if (keywords[j].indexOf(searchWords[i].toLowerCase())==0) {
+                        truthArray.push('count');
+                        break;
+                    }
+                    j++;
+                }
+                i++;
+            }
+            
+            if (truthArray.length == searchWords.length) returnItem = true;
+            else returnItem = false;
+            return returnItem;
+        }
+        function filterSearchDb(searchWords, searchDb){
+            let filteredSearchDb = {};
+            let accountDash = {
+                cards: [],
+                tabs: []
+            };
+            let oppDash = {
+                cards: [],
+                tabs: [],
+                oppList : []
+            };
+            let invDash = {
+                cards: [],
+                tabs: [],
+                invList : []
+            }
+            //If empty string
+            if(searchWords.length == 0){
+                filteredSearchDb.accountDash = accountDash;
+                filteredSearchDb.oppDash = oppDash;
+                filteredSearchDb.invDash = invDash;
+                return filteredSearchDb;
+            }
+            //Account Dashboard
+            //Account Cards
+            
+            accountDash.cards = searchDb.accountDash.cards.filter((card)=>{
+                return handleFilter(card, searchWords);
+            
+            })
+            //Account tabs
+            
+            accountDash.tabs = searchDb.accountDash.tabs.filter((tab)=>{
+                return handleFilter(tab, searchWords);
+            });
+
+            //Opporunities Dashboard
+            //Opportunities Cards
+            
+            oppDash.cards = searchDb.oppDash.cards.filter((card)=>{
+                return handleFilter(card, searchWords);
+            })
+            //Opportunities Tabs
+        
+            oppDash.tabs = searchDb.oppDash.tabs.filter((tab)=>{
+                return handleFilter(tab, searchWords);
+            })
+            //Opportunities List
+            
+            oppDash.oppList = searchDb.oppDash.oppList.filter((listItem)=>{
+                return handleFilter(listItem, searchWords);
+            })
+
+            //Investments Dashboard
+            //Investments Cards
+            
+            invDash.cards = searchDb.invDash.cards.filter((card)=>{
+                return handleFilter(card, searchWords);
+            })
+            //Investments Tabs
+            
+            invDash.tabs = searchDb.invDash.tabs.filter((tab)=>{
+                return handleFilter(tab, searchWords);
+            })
+            //Investments List
+            
+            invDash.invList = searchDb.invDash.invList.filter((listItem)=>{
+                return handleFilter(listItem, searchWords);
+            })
+            filteredSearchDb.accountDash = accountDash;
+            filteredSearchDb.oppDash = oppDash;
+            filteredSearchDb.invDash = invDash;
+            return filteredSearchDb;
+        }
+        function SearchPage(){
+            let searchInput = document.querySelector('.search-input');
+            let searchString = searchInput.value;
+            let searchPageResults = document.querySelector('.search-page-results');
+            searchPageResults.classList.remove('visually-hidden');
+            if (searchString.length < 1) {
+                searchPageResults.classList.add('visually-hidden');
+                return;
+            }
+            
+            let searchWords = searchString.split(" ");
+                //Remove  search words with whitespace
+                searchWords = searchWords.filter((searchWord)=>{
+                searchWord = searchWord.trim();
+                if (searchWord) return true;
+                else return false;
+            })
+
+            let filteredSearchDb = filterSearchDb(searchWords, searchDb);
+            toggleVisibleSearch(filteredSearchDb);
+            //Populate Account Search
+            let accountCards = document.querySelector('.search-account-cards');
+            let accountTabs = document.querySelector('.search-account-tabs');
+            accountCards.innerHTML = SearchCardsTabs(filteredSearchDb.accountDash.cards, true)
+            accountTabs.innerHTML = SearchCardsTabs(filteredSearchDb.accountDash.tabs, false)
+            
+            //Populate Opportunity Search
+            let oppCards = document.querySelector('.search-opp-cards');
+            let oppTabs = document.querySelector('.search-opp-tabs');
+            let oppList = document.querySelector('.search-opp-list');
+            oppCards.innerHTML = SearchCardsTabs(filteredSearchDb.oppDash.cards, true)
+            oppTabs.innerHTML = SearchCardsTabs(filteredSearchDb.oppDash.tabs, false)
+            oppList.innerHTML = SearchOppList(filteredSearchDb.oppDash.oppList)
+
+            //Populate Investments Search
+            let invCards = document.querySelector('.search-inv-cards');
+            let invTabs = document.querySelector('.search-inv-tabs');
+            let invList = document.querySelector('.search-inv-list');
+            invCards.innerHTML = SearchCardsTabs(filteredSearchDb.invDash.cards, true)
+            invTabs.innerHTML = SearchCardsTabs(filteredSearchDb.invDash.tabs, false)
+            invList.innerHTML = SearchInvList(filteredSearchDb.invDash.invList)
+        }
+        //Toggle visible Search Sections
+        function toggleVisibleSearch(db){
+            let visibleSections = {
+                account: true,
+                opp:true,
+                inv: true
+            }
+            document.querySelector('.search-account').classList.remove('visually-hidden');
+            document.querySelector('.search-opp').classList.remove('visually-hidden');
+            document.querySelector('.search-inv').classList.remove('visually-hidden');
+            document.querySelector('.hr-opp').classList.remove('visually-hidden');
+            document.querySelector('.hr-account').classList.remove('visually-hidden');
+            document.querySelector('.search-no-results').classList.add('visually-hidden');
+            if ((db.accountDash.cards.length == 0) && (db.accountDash.tabs.length ==0)){
+                let account = document.querySelector('.search-account');
+                account.classList.add('visually-hidden')
+                visibleSections.account = false;
+            }
+            if ((db.oppDash.cards.length == 0) && (db.oppDash.tabs.length ==0) && (db.oppDash.oppList.length == 0)){
+                let opp = document.querySelector('.search-opp');
+                opp.classList.add('visually-hidden')
+                visibleSections.opp = false;
+            }
+            if ((db.invDash.cards.length == 0) && (db.invDash.tabs.length ==0) && (db.invDash.invList.length == 0)){
+                let inv = document.querySelector('.search-inv');
+                inv.classList.add('visually-hidden')
+                visibleSections.inv = false;
+            }
+
+            //Toggle search hr elements
+            if (visibleSections.account && visibleSections.opp && !visibleSections.inv){
+                document.querySelector('.hr-opp').classList.add('visually-hidden');
+            }
+            if (visibleSections.account && !visibleSections.opp && !visibleSections.inv){
+                document.querySelector('.hr-account').classList.add('visually-hidden');
+            }
+            if (!visibleSections.account && visibleSections.opp && !visibleSections.inv){
+                let hr = document.querySelector('.hr-opp');
+                hr.classList.add('visually-hidden');
+            }
+            //toggle no results
+            if (!visibleSections.account && !visibleSections.opp && !visibleSections.inv){
+                document.querySelector('.search-no-results').classList.remove('visually-hidden');
+            }
+        }
+        //Search Cards & Tabs HTML
+        function SearchCardsTabs(cardsTabs, isCard){
+            let html = '';
+            cardsTabs.forEach((cardTab)=>{
+                html += `
+                    <a href= ${cardTab.open.targetElementId} class="search-opp-card d-flex mb-3" onclick='openSearchResult(${JSON.stringify(cardTab.open)})'>
+                        <p class="search-card-tab-name me-2">${cardTab.name} </p>
+                        ${isCard && cardTab.value!=='' ?' <p class="search-card-tab-name me-1"> &mdash; <span class="me-1" ></span>' + cardTab.value+ '</p>':  '' }
+                    </a>
+                `
+            })
+            return html;
+        }
+        //Search Opp List HTML
+        function SearchOppList(oppList){
+            let html = '';
+            
+            oppList.forEach((listItem)=>{
+                html+=`
+                    <li class="mb-3">
+                        <a class='d-flex align-items-center' href="${listItem.open.targetElementId}" onclick='openSearchResult(${JSON.stringify(listItem.open)})'>
+                            <div class="dash-icons align-items-center me-2">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            Opportunity ${listItem.name} &mdash;
+                            <span class="ms-1">UGX ${listItem.amount}</span>
+                        </a>
+                    </li>
+                `
+            });
+            return html;
+        }
+        //Search Inv List HTML
+        function SearchInvList(invList){
+            let html = '';
+            invList.forEach((listItem)=>{
+                html+=`
+                    <li class="mb-3 d-flex">
+                        <a class="d-flex" href="${listItem.open.targetElementId}" onclick='openSearchResult(${JSON.stringify(listItem.open)})'>
+                            <div class="d-flex align-items-center dash-icons dash-inv-icons me-2">
+                                <i class="bi bi-arrow-down"></i>
+                                <div class="d-flex flex-column">
+                                    <i class="bi bi-coin"></i>
+                                    <i class="bi bi-coin"></i>
+                                    <i class="bi bi-coin"></i>
+                                </div>
+                                <i class="bi bi-arrow-up"></i>
+                            </div>
+                            <span>Investment ${listItem.name} &mdash;</span>
+                            <span class="ms-1">UGX ${listItem.amount} </span>
+                        </a>
+                    </li>
+                `
+            });
+            return html;
+        }
+
+        let searchDb = {
+            accountDash:{
+                cards: [
+                    {
+                        name: 'Total Worth', value:400000, keyWordList: "dashboard account  summary total net total worth",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-summary-toggler' ,targetElementId: '#account-summary-worth', targetTogglerId:false, dataAttribute: false}
+                    },
+                    {
+                        name: 'Invested', value:300000, keyWordList: "dashboard account  summary    invested",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-summary-toggler' ,targetElementId: '#account-summary-invested', targetToggler:false, dataAttribute:false}
+                    },
+                    {
+                        name: 'Account Balance', value:300000, keyWordList: "dashboard account summary account balance",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-summary-toggler' ,targetElementId: '#account-summary-account-balance', targetToggler:false, dataAttribute:false}
+                    },
+                    {
+                        name: 'Withdraw', value:'', keyWordList: "dashboard account summary withdraw",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-summary-toggler' ,targetElementId: '#withdraw-form', targetTogglerId:'#account-summary-withdraw', dataAttribute: false}
+                    }
+                ],
+                tabs: [
+                    {
+                        name: 'Account Summary', keyWordList: "dashboard account summary",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-summary-toggler' ,targetElementId: '#account-summary', targetToggler:false , dataAttribute:false}
+                    },
+                    {
+                        name: 'Deposits', keyWordList: "dashboard account deposits ",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-deposits-toggler' ,targetElementId: '#account-deposits', targetToggler:false , dataAttribute:false}
+                    },
+                    {
+                        name: 'Withdrawals', keyWordList: "dashboard account withdrawals",
+                        open: {dashTogglerId:'#account-toggler' , tabTogglerId:'#account-withdrawals-toggler' ,targetElementId: '#account-withdrawals', targetToggler:false , dataAttribute:false}
+                    }
+                ],
+            },
+            oppDash:{
+                cards:[
+                    {
+                        name: 'Investing & Lending', value:250000, keyWordList: "dashboard opportunities opportunity  investing & and lending",
+                        open: {dashTogglerId:'#opp-toggler' , tabTogglerId:false,targetElementId: '#opp-investing-lending', targetToggler:false, dataAttribute: false }
+                    },
+                    {
+                        name: 'Collateral (For Borrowing)', value:250000, keyWordList: "dashboard opportunities opportunity  collateral for borrowing",
+                        open: {dashTogglerId:'#opp-toggler' , tabTogglerId:false,targetElementId: '#opp-collateral', targetToggler: false, dataAttribute: false }
+                    },
+                ],
+                tabs:[
+                    {
+                        name: 'List of available opportunities', keyWordList: "dashboard list of available current opportunities opportunity",
+                        open: {dashTogglerId:'#opp-toggler' , tabTogglerId:'#opp-opp-toggler' ,targetElementId: '#opp-opp', targetToggler:false , dataAttribute:false}
+                    },
+                    {
+                        name: 'List of pending opportunities', keyWordList: "dashboard list of pending  opportunities opportunity",
+                        open: {dashTogglerId:'#opp-toggler' , tabTogglerId:'#opp-pending-toggler' ,targetElementId: '#opp-pending', targetToggler:false , dataAttribute:false}
+                    },
+                ],
+                oppList:[
+                    {
+                        name: 'Ariko', amount: 70000, keyWordList: "dashboard opportunity opportunities ariko",
+                        open: {dashTogglerId:'#opp-toggler' , tabTogglerId:'#opp-opp-toggler',
+                            targetElementId: '#opp-form', dataAttribute: {name:'data-opp-id', value:2}}
+                    },
+                    {
+                        name: 'Josh', amount: 90000, keyWordList: "dashboard opportunity opportunities josh",
+                        open: {dashTogglerId:'#opp-toggler' , tabTogglerId:'#opp-opp-toggler',
+                            targetElementId: '#opp-form', dataAttribute: {name:'data-opp-id', value:4}}
+                    },
+                ]
+            },
+            invDash:{
+                cards:[
+                    {
+                        name: 'Borrowed Capital', value:150000, keyWordList: "dashboard investments borrowed capital",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:false ,targetElementId: '#inv-borrowed-capital', targetTogglerId:false, dataAttribute: false}
+                    },
+                    {
+                        name: 'Personal Capital', value:250000, keyWordList: "dashboard investments personal capital",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:false ,targetElementId: '#inv-personal-capital', targetTogglerId:false, dataAttribute: false}
+                    },
+                    {
+                        name: 'Lent Out', value:200000, keyWordList: "dashboard investments lent out capital",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:false ,targetElementId: '#inv-lent-out', targetTogglerId:false, dataAttribute: false}
+                    },
+                    {
+                        name: 'Loan To Pay', value:0, keyWordList: "dashboard investments loan to pay",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:false ,targetElementId: '#inv-loan-to-pay', targetTogglerId:false, dataAttribute: false}
+                    },
+
+                ],
+                tabs:[
+                    {
+                        name: 'List of current investments', keyWordList: "dashboard list of current investments",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:'#inv-current-toggler' ,targetElementId: '#inv-current', targetToggler:false , dataAttribute:false}
+                    },
+                    {
+                        name: 'List of past investments', keyWordList: "dashboard list of past  investments",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:'#inv-past-toggler' ,targetElementId: '#inv-past', targetToggler:false , dataAttribute:false}
+                    },
+                ],
+                invList:[
+                    {
+                        name: 'Blaise', amount: 90000, keyWordList: "dashboard investments blaise",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:'#inv-current-toggler',
+                            targetElementId: '#inv-summary-current', dataAttribute: {name:'data-inv-id', value:1}}
+                    },
+                    {
+                        name: 'Atim', amount: 40000, keyWordList: "dashboard investments atim",
+                        open: {dashTogglerId:'#inv-toggler' , tabTogglerId:'#inv-past-toggler',
+                            targetElementId: '#inv-summary-past', dataAttribute: {name:'data-inv-id', value:5}}
+                    },
+                ]
+            }
+        }
+        
+        //Search Suggestions
+        function SearchSuggestion(dash){
+            let searchInput = document.querySelector('.search-input');
+            searchInput.value = dash;
+            searchInput.dispatchEvent(new Event('input', { bubbles: true }))
+        }
+    
+        function CountDown(countDownDate, element, isFullTime, removeElement){
+
+            // Update the count down every 1 second
+            let x = setInterval(function() {
+                
+                // Get current date
+                
+                
+                var currentDate = new Date();
+                // Find the distance between now and the count down date
+                var distance = countDownDate.getTime() - currentDate.getTime();
+                
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element
+                //For Full Time Display (Form)
+                if(isFullTime){
+                    element.innerHTML = days + "D " + hours + "H "
+                    + minutes + "M " + seconds + "S";
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        element.innerHTML = "This opportunity has expired";
+                        element.classList.add('text-danger');
+                        document.querySelector('.time-left-caption').classList.add('visually-hidden');
+                        document.querySelector('.btn-invest').classList.add('disabled');
+                    }
+                }
+                //For Part Time Display (Opportunity List)
+                if(!isFullTime){
+                    if (days > 0) element.innerHTML = days + "D";
+                    if (days == 0 && hours > 0) element.innerHTML = hours+1 + "H";
+                    if (days == 0 && hours == 0 && minutes > 0) element.innerHTML = minutes+1 + "M";
+                    if (days == 0 && hours == 0 && minutes == 0) element.innerHTML = seconds + "S";
+                    // If the count down is finished, hide removeElement
+                    if (distance < 0) {
+                        clearInterval(x);
+                        removeElement.classList.add('visually-hidden');
+                    }
+                }
+                
+            }, 1000);
+        }
+        
+        let formTimeLeft = document.querySelector('.form-time-left');
+        let formCountDownDate = new Date('June 16, 2023 19:59:00');
+        CountDown(formCountDownDate, formTimeLeft , true);
+        let partTimes = document.querySelectorAll('.part-time');
+        partTimes.forEach((partTime)=>{
+            let date = partTime.getAttribute('data-date');
+            let oppId = partTime.getAttribute('data-opp-id');
+            //convert date to date object
+            let countDownDate = new Date(date);
+            //get element to be removed when time elapses
+            let removeElement = document.querySelector(`li[data-opp-id = '${oppId}']`)
+            //call count down
+            CountDown(countDownDate, partTime, false, removeElement );
+        })
+        
+
+        
+    </script>
+</body>
+</html>
